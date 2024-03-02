@@ -1754,23 +1754,23 @@ class AxesProperties:
         ticks = self.axes.get_xaxis().get_major_ticks()
 
         # Getting ticks position
-        if ticks[0].tick1On and ticks[0].tick2On:
+        if ticks[0].tick1line.get_visible() and ticks[0].tick2line.get_visible():
             self.xTickLabel['Tick Position'] = 'both'
-        if ticks[0].tick1On and not ticks[0].tick2On:
+        if ticks[0].tick1line.get_visible() and not ticks[0].tick2line.get_visible():
             self.xTickLabel['Tick Position'] = 'bottom'
-        if not ticks[0].tick1On and ticks[0].tick2On:
+        if not ticks[0].tick1line.get_visible() and ticks[0].tick2line.get_visible():
             self.xTickLabel['Tick Position'] = 'top'
-        if not ticks[0].tick1On and not ticks[0].tick2On:
+        if not ticks[0].tick1line.get_visible() and not ticks[0].tick2line.get_visible():
             self.xTickLabel['Tick Position'] = 'none'
 
         # Getting tick-labels position
-        if ticks[0].label1On and ticks[0].label2On:
+        if ticks[0].label1.get_visible() and ticks[0].label2.get_visible():
             self.xTickLabel['Label Position'] = 'both'
-        if ticks[0].label1On and not ticks[0].label2On:
+        if ticks[0].label1.get_visible() and not ticks[0].label2.get_visible():
             self.xTickLabel['Label Position'] = 'bottom'
-        if not ticks[0].label1On and ticks[0].label2On:
+        if not ticks[0].label1.get_visible() and ticks[0].label2.get_visible():
             self.xTickLabel['Label Position'] = 'top'
-        if not ticks[0].label1On and not ticks[0].label2On:
+        if not ticks[0].label1.get_visible() and not ticks[0].label2.get_visible():
             self.xTickLabel['Label Position'] = 'none'
 
         #Getting tick-label padding
@@ -1810,23 +1810,23 @@ class AxesProperties:
         ticks = self.axes.get_yaxis().get_major_ticks()
 
         # Getting ticks position
-        if ticks[0].tick1On and ticks[0].tick2On:
+        if ticks[0].tick1line.get_visible() and ticks[0].tick2line.get_visible():
             self.yTickLabel['Tick Position'] = 'both'
-        if ticks[0].tick1On and not ticks[0].tick2On:
+        if ticks[0].tick1line.get_visible() and not ticks[0].tick2line.get_visible():
             self.yTickLabel['Tick Position'] = 'left'
-        if not ticks[0].tick1On and ticks[0].tick2On:
+        if not ticks[0].tick1line.get_visible() and ticks[0].tick2line.get_visible():
             self.yTickLabel['Tick Position'] = 'right'
-        if not ticks[0].tick1On and not ticks[0].tick2On:
+        if not ticks[0].tick1line.get_visible() and not ticks[0].tick2line.get_visible():
             self.yTickLabel['Tick Position'] = 'none'
 
         # Getting tick-labels position
-        if ticks[0].label1On and ticks[0].label2On:
+        if ticks[0].label1.get_visible() and ticks[0].label2.get_visible():
             self.yTickLabel['Label Position'] = 'both'
-        if ticks[0].label1On and not ticks[0].label2On:
+        if ticks[0].label1.get_visible() and not ticks[0].label2.get_visible():
             self.yTickLabel['Label Position'] = 'left'
-        if not ticks[0].label1On and ticks[0].label2On:
+        if not ticks[0].label1.get_visible() and ticks[0].label2.get_visible():
             self.yTickLabel['Label Position'] = 'right'
-        if not ticks[0].label1On and not ticks[0].label2On:
+        if not ticks[0].label1.get_visible() and not ticks[0].label2.get_visible():
             self.yTickLabel['Label Position'] = 'none'
 
         #Getting tick-label padding
