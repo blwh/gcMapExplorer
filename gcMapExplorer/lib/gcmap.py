@@ -339,7 +339,7 @@ class GCMAP:
         self.title = self.xlabel + '_vs_' + self.ylabel
 
         if self.resolution+'-bNoData' in self.hdf5[self.groupName]:
-            self.bNoData = np.asarray( self.hdf5[self.groupName][self.resolution+'-bNoData'][:], dtype=np.bool )
+            self.bNoData = np.asarray( self.hdf5[self.groupName][self.resolution+'-bNoData'][:], dtype=bool )
         self.matrix = self.hdf5[self.groupName][self.resolution]
 
     def loadSmallestMap(self, resolution=None):
@@ -814,7 +814,7 @@ def loadGCMapAsCCMap(filename, mapName=None, chromAtX=None, chromAtY=None, resol
     cmap.title = xlabel+'_vs_'+ylabel
 
     if resolution+'-bNoData' in hdf5[groupName].keys():
-        cmap.bNoData = np.asarray( hdf5[groupName][resolution+'-bNoData'][:], dtype=np.bool )
+        cmap.bNoData = np.asarray( hdf5[groupName][resolution+'-bNoData'][:], dtype=bool )
 
     cmap.gen_matrix_file(workDir)
     cmap.make_writable()

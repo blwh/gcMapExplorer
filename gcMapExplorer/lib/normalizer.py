@@ -186,7 +186,7 @@ def NormalizeKnightRuizOriginal(ccMapObj, tol=1e-12, x0=None, delta=0.1, Delta=3
     A_DSMat[:] = x.T * (A * x)
 
     # Assigning minvalue and maxvalue
-    normCCMap.maxvalue = np.float(np.amax(A_DSMat))
+    normCCMap.maxvalue = float(np.amax(A_DSMat))
     minvalue = np.amin(A_DSMat)
     v_steps = np.linspace(minvalue, normCCMap.maxvalue, 100)
     normCCMap.minvalue = minvalue - (v_steps[1] - v_steps[0])

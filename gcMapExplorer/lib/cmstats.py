@@ -142,9 +142,9 @@ def correlateCMaps(ccMapObjOne, ccMapObjTwo, ignore_triangular=True, diagonal_of
     try:
 
         # generate boolean arrays to store mask
-        m1 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=np.bool, workDir=workDir)
-        m2 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=np.bool, workDir=workDir)
-        mask = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=np.bool, workDir=workDir)
+        m1 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=bool, workDir=workDir)
+        m2 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=bool, workDir=workDir)
+        mask = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=bool, workDir=workDir)
 
         # Determine masks for two maps and combine it
         m1.arr[:] = ccMapObjOne.matrix[:smallest_shape, :smallest_shape] < ccMapObjOne.minvalue
@@ -462,9 +462,9 @@ def correlateCMapsBinWise(ccMapObjOne, ccMapObjTwo, corrType='pearson', cutoffPe
     try:
 
         # generate boolean arrays to store mask
-        m1 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=np.bool, workDir=workDir)
-        m2 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=np.bool, workDir=workDir)
-        mask = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=np.bool, workDir=workDir)
+        m1 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=bool, workDir=workDir)
+        m2 = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=bool, workDir=workDir)
+        mask = cmh.MemoryMappedArray(shape=(smallest_shape, smallest_shape), dtype=bool, workDir=workDir)
 
         # Determine masks for two maps and combine it
         m1.arr[:] = ccMapObjOne.matrix[:smallest_shape, :smallest_shape] == ccMapObjOne.minvalue

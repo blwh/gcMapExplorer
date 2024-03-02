@@ -34,7 +34,7 @@ from . import util
 def performIterativeCorrection(matrix, tol, iteration):
     count = 0
     contact_count = np.sum(matrix)
-    B = np.ones((matrix.shape[0],1), dtype=np.float)   # Step - 0
+    B = np.ones((matrix.shape[0],1), dtype=float)   # Step - 0
     prev_B = None
 
     # Step - 8, Repeat steps 1-7 until variance of dB becomes negligible.

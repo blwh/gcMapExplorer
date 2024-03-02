@@ -333,7 +333,7 @@ class TempNumpyArrayFiles:
             self.logger.info(' Generating temporary numpy array file [{0}] for {1} ...' .format(fname, key))
 
             size = self.chromSizeInfo[key] + 1        # Be careful: added one to easily handle real locations, zeroth index is dummy, dont use zeroth location
-            np.save(fname, np.zeros(size, dtype=np.float))
+            np.save(fname, np.zeros(size, dtype=float))
             npy = np.load(fname, mmap_mode='r+')
 
             self.arrays[key] = npy
@@ -3411,7 +3411,7 @@ class TextFileHandler:
         self.logger.info(' Generating temporary numpy array file [{0}] ...' .format(fname))
 
         size = self.shape + 1        # Be careful: added one to easily handle real locations, zeroth index is dummy, dont use zeroth location
-        np.save(fname, np.zeros(size, dtype=np.float))
+        np.save(fname, np.zeros(size, dtype=float))
         self.data = np.load(fname, mmap_mode='r+')
         self.tmpNumpyFileName = fname
 
@@ -3453,7 +3453,7 @@ class TextFileHandler:
             self._generateTempNumpyFile()
         else:
             size = self.shape + 1
-            self.data = np.zeros(size, dtype=np.float)
+            self.data = np.zeros(size, dtype=float)
 
         fin = open(self.filename, 'r')
 

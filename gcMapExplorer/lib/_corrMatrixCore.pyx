@@ -29,9 +29,9 @@ import sys
 from libc.math cimport isnan, sqrt, pow
 
 dtypeFloat32 = np.float32
-dtypeFloat = np.float
-dtypeInt = np.int
-dtypeBool = np.bool
+dtypeFloat = float
+dtypeInt = int
+dtypeBool = bool
 ctypedef np.int_t dtypeInt_t
 ctypedef np.float_t dtypeFloat_t
 ctypedef np.float32_t dtypeFloat32_t
@@ -239,10 +239,10 @@ def _calculateCorrMatrixOLDSLOW(np.ndarray[dtypeFloat_t, ndim=2] matrix):
         int i = 0
         int j = 0
         int k = 0
-        np.ndarray[dtypeFloat_t, ndim=2] rvec = np.zeros((2,2), dtype=np.float)
-        np.ndarray[dtypeFloat_t, ndim=2] corrMatrix = np.zeros((length,length), dtype=np.float)
-        np.ndarray[np.uint8_t, cast=True, ndim=2] boolMatrix = np.zeros((length,length), dtype=np.bool)
-        np.ndarray[np.uint8_t, cast=True, ndim=1] boolOneC = np.zeros((length,), dtype=np.bool)
+        np.ndarray[dtypeFloat_t, ndim=2] rvec = np.zeros((2,2), dtype=float)
+        np.ndarray[dtypeFloat_t, ndim=2] corrMatrix = np.zeros((length,length), dtype=float)
+        np.ndarray[np.uint8_t, cast=True, ndim=2] boolMatrix = np.zeros((length,length), dtype=bool)
+        np.ndarray[np.uint8_t, cast=True, ndim=1] boolOneC = np.zeros((length,), dtype=bool)
 
     for i in range(length):
         boolMatrix[i] = ( matrix[i] != 0)

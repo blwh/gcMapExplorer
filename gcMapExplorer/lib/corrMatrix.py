@@ -301,7 +301,7 @@ def calculateCorrMatrixOLDSLOW(inputCCMap, logspace=False, outFile=None, workDir
     try:
         ccmap.make_readable()
         matrix = (ccmap.matrix[~ccmap.bNoData,:])[:,~ccmap.bNoData]   # Selected row-column which are not all zeros
-        matrix = matrix.astype(np.float)
+        matrix = matrix.astype(float)
         mshape = matrix.shape
 
         if logspace:

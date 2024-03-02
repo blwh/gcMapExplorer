@@ -1464,7 +1464,7 @@ class BinsNContactFilesHandler:
             self.logger.info(' Generating temporary numpy array file [{0}] for {1} ...' .format(fname, key))
 
             size = int(self.ChromSize[key]/self.binsize)+1
-            np.save(fname, np.zeros(size, dtype=np.int))
+            np.save(fname, np.zeros(size, dtype=int))
             npy = np.load(fname, mmap_mode='r+')
             self.npyBinFileList[key] = (npy, fname)
 
